@@ -46,7 +46,8 @@ def get_results(messages):
         graph = Neo4jGraph(
             url=host, 
             username=user, 
-            password=password
+            password=password,
+            database='genai'
         )
         chain = GraphCypherQAChain.from_llm(
             VertexAI(
@@ -68,6 +69,6 @@ def get_results(messages):
     #     print(ex)
     #     return "LLM Quota Exceeded. Please try again"
     finally:
-        print('Cypher Generation Time : {}'.format(timer() - start))
+        print('Your Cypher Generation Time : {}'.format(timer() - start))
 
 
