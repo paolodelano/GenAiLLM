@@ -47,7 +47,7 @@ def get_results(messages):
             url=host, 
             username=user, 
             password=password,
-            database='genai'
+            database= [your dbname]
         )
         chain = GraphCypherQAChain.from_llm(
             VertexAI(
